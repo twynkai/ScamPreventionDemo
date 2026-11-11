@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal Checkout</title>
+</head>
+<body>
+    <h1>Complete Your Payment</h1>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA35nYIl8ee9OzZQ8tuDffgdgJOodRbxy6zGErIQWea5nbHDb4OV-_CHT1EHw7IDmh746AcrCf35KBmDM
+
+"></script>
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return fetch('/api/create-paypal-order', {
+                method: 'post'
+            }).then(function(res) {
+                return res.json();
+            }).then(function(orderData) {
+                return orderData.id;
+            });
+        }
+    }).render('body');
+</script>
+</body>
+</html>
