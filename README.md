@@ -131,8 +131,8 @@ PAYPAL_CLIENT_ID=your_paypal_sandbox_client_id
 PAYPAL_CLIENT_SECRET=your_paypal_sandbox_client_secret
 ACCESS_TOKEN_SECRET=your_shared_hmac_and_jwt_secret
 VITE_ACCESS_TOKEN_SECRET=your_shared_hmac_and_jwt_secret
-REDIS_PASSWORD=spynx
-JWT_SECRET=spynxprotohacka
+REDIS_PASSWORD=your_secure_redis_password_here
+JWT_SECRET=your_jwt_secret_here
 ```
 *(Note: Ensure `ACCESS_TOKEN_SECRET` and `VITE_ACCESS_TOKEN_SECRET` share the exact same key string so client-side Web Crypto HMAC signatures match server-side verification[cite: 4].)*
 
